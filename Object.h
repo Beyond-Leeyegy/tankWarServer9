@@ -3,7 +3,7 @@
 //#include <WinSock2.h>
 //
 //#include <windows.h>
-//#include <list>
+#include <list>
 #include "Rect.h"
 #include "Point.h"
 #include "def.h"
@@ -17,13 +17,13 @@ class Object
 {
 public:
 	// 绘图
-	virtual void Display() = 0;
+	//virtual void Display() = 0;
 
 	// 移动
-	virtual void Move() = 0;
+	virtual void Move(int start_x, int end_x, int start_y, int end_y) = 0;
 
 	// 爆炸
-	virtual void Boom(list<Object*>& lstBombs) = 0;
+	//virtual void Boom(list<Object*>& lstBombs) = 0;
 
 	// 设置消失
 	virtual void SetDisappear() = 0;
@@ -41,7 +41,7 @@ public:
 	Point get_pos();
 
 	void set_pos(int pos_x,int pos_y);
-	void Object::SetDir(Dir dir);
+	void SetDir(Dir dir);
 
 	COLORREF get_color();
 

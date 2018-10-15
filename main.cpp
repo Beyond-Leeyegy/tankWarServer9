@@ -191,7 +191,7 @@ void ProcessLoop() {
 	/*
 		设置未检测到信号就立即跳转到下一个套接字的信号的检测
 	*/
-	tv.tv_sev = 0;
+	tv.tv_sec = 0;
 	tv.tv_usec = 0;
 
 	sPCLIENT_DATA client, next_client;

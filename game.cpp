@@ -3,7 +3,7 @@
 #include "packet.h"
 #include "Bullet.h"
 #include "utils.h"
-#include "shape.h"
+#include "Shape.h"
 #include "Setting.h"
 #include "EnemyTank.h"
 #include "network.h"

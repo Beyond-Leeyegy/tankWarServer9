@@ -149,7 +149,7 @@ void HANDLE_NEW_BULLET(sPCLIENT_DATA pClient,Game& game) {
 	  @功能：处理某用户所有等待被处理的数据包
 	  NOTICE:每处理一个数据包，用户的m_recvBuff就会删除已经处理的数据包；同时更新m_recvSize
 */
-BOOL ReadRecvBuff(sPCLIENT_DATA pClient) {
+BOOL ReadRecvBuff(sPCLIENT_DATA pClient,Game& game) {
 	WORD msgSize;
 	WORD tag;
 
@@ -182,7 +182,7 @@ BOOL ReadRecvBuff(sPCLIENT_DATA pClient) {
 			HANDLE_IS_READY(pClient);
 			break;
 		case dPACKET_NEW_BULLET:
-			HANDLE_NEW_BULLET(pClient);
+			HANDLE_NEW_BULLET(pClient,game);
 			break;
 		case dPACKET_MAINTANK_POS: 
 			HANDLE_MAINTANK_POS(pClient);

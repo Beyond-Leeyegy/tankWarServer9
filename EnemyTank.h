@@ -18,8 +18,8 @@ public:
 
 	~EnemyTank(){}
 
-	void Display();
-	void Move();
+	
+	void Move(int start_x, int end_x, int start_y, int end_y);
 	void Shoot(list<Object*>& lstBullets);
 
 	void set_stepCnt(int stepCnt);
@@ -27,7 +27,7 @@ public:
 
 protected:
 	void CalculateSphere();
-	void RandomTank();
+	void RandomTank(int width, int height);
 	// 随机产生坦克方向 type： 1, 新方向必须与之前方向不同 2, 任意一个新方向
 	void RandomDir(int type);
 

@@ -22,7 +22,7 @@ public:
 
 		this->CalculateSphere();
 
-		m_color = YELLOW;
+		//m_color = YELLOW;
 		m_dir = Dir::UP;
 		m_step = 2;
 
@@ -32,20 +32,20 @@ public:
 
 	~Tank(){}
 
-	void Display()
-	{
-		// Display
-	}
+	//void Display()
+	//{
+	//	// Display
+	//}
 	
-	void Move()
+	void Move(int start_x, int end_x, int start_y, int end_y)
 	{
 		// Move
 	}
 
-	void Boom(list<Object*>& lstBombs)
-	{
-		lstBombs.push_back(new Bomb(m_pos, LARGE));
-	}
+	//void Boom(list<Object*>& lstBombs)
+	//{
+	//	lstBombs.push_back(new Bomb(m_pos, LARGE));
+	//}
 
 	// 射击
 	void Shoot(list<Object*>& lstBullets)

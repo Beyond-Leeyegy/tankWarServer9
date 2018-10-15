@@ -1,7 +1,7 @@
 ﻿
 #include "Shape.h"
 
-bool Shape::CheckPointInRect(Point& point, Rect& rect)
+bool Shape::CheckPointInRect(Point point, Rect& rect)
 {
 	if (point.GetX() < rect.GetStartPoint().GetX() || point.GetX() > rect.GetEndPoint().GetX() ||
 		point.GetY() < rect.GetStartPoint().GetY() || point.GetY() > rect.GetEndPoint().GetY())

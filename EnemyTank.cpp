@@ -2,12 +2,13 @@
 #include "EnemyTank.h"
 
 #include "Bullet.h"
+#include "Object.h"
 
-void EnemyTank::RandomTank()
+void EnemyTank::RandomTank(int width,int height)
 {
-	m_pos.SetX(rand() % (Graphic::GetBattleGround().GetWidth() - 30) + 15);
-	m_pos.SetY(rand() % (Graphic::GetBattleGround().GetHeight() - 30) + 15);
-	m_color = WHITE;
+	m_pos.SetX(rand() % (width - 30) + 15);
+	m_pos.SetY(rand() % (height - 30) + 15);
+	//m_color = WHITE;
 	m_dir = (Dir)(Dir::UP + (rand() % 4));
 	m_step = 1;
 	m_stepCnt = rand();
@@ -35,56 +36,56 @@ void EnemyTank::RandomDir(int type)
 		m_dir = (Dir)(Dir::UP + (rand() % 4));
 	}
 }
+//
+//void EnemyTank::Display()
+//{
+//	COLORREF fill_color_save = getfillcolor();
+//	COLORREF color_save = getcolor();
+//
+//	setfillcolor(m_color);
+//	setcolor(m_color);
+//	
+//	fillrectangle(m_pos.GetX() - 6, m_pos.GetY() - 6, m_pos.GetX() + 6, m_pos.GetY() + 6);
+//
+//	fillrectangle(m_rectSphere.GetStartPoint().GetX(), m_rectSphere.GetStartPoint().GetY(),
+//		m_rectSphere.GetStartPoint().GetX() + 4, m_rectSphere.GetStartPoint().GetY() + 4);
+//	fillrectangle(m_rectSphere.GetEndPoint().GetX() - 4, m_rectSphere.GetStartPoint().GetY(),
+//		m_rectSphere.GetEndPoint().GetX(), m_rectSphere.GetStartPoint().GetY() + 4);
+//
+//	fillrectangle(m_rectSphere.GetStartPoint().GetX(), m_rectSphere.GetEndPoint().GetY() - 4,
+//		m_rectSphere.GetStartPoint().GetX() + 4, m_rectSphere.GetEndPoint().GetY());
+//	fillrectangle(m_rectSphere.GetEndPoint().GetX() - 4, m_rectSphere.GetEndPoint().GetY() - 4,
+//		m_rectSphere.GetEndPoint().GetX(), m_rectSphere.GetEndPoint().GetY());
+//	
+//	switch (m_dir)
+//	{
+//	case UP:
+//		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX(), m_pos.GetY() - 15);
+//		break;
+//	case DOWN:
+//		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX(), m_pos.GetY() + 15);
+//		break;
+//	case LEFT:
+//		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX() - 15, m_pos.GetY());
+//		break;
+//	case RIGHT:
+//		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX() + 15, m_pos.GetY());
+//		break;
+//	default:
+//		break;
+//	}
+//
+//	setcolor(color_save);
+//	setfillcolor(fill_color_save);
+//}
 
-void EnemyTank::Display()
-{
-	COLORREF fill_color_save = getfillcolor();
-	COLORREF color_save = getcolor();
-
-	setfillcolor(m_color);
-	setcolor(m_color);
-	
-	fillrectangle(m_pos.GetX() - 6, m_pos.GetY() - 6, m_pos.GetX() + 6, m_pos.GetY() + 6);
-
-	fillrectangle(m_rectSphere.GetStartPoint().GetX(), m_rectSphere.GetStartPoint().GetY(),
-		m_rectSphere.GetStartPoint().GetX() + 4, m_rectSphere.GetStartPoint().GetY() + 4);
-	fillrectangle(m_rectSphere.GetEndPoint().GetX() - 4, m_rectSphere.GetStartPoint().GetY(),
-		m_rectSphere.GetEndPoint().GetX(), m_rectSphere.GetStartPoint().GetY() + 4);
-
-	fillrectangle(m_rectSphere.GetStartPoint().GetX(), m_rectSphere.GetEndPoint().GetY() - 4,
-		m_rectSphere.GetStartPoint().GetX() + 4, m_rectSphere.GetEndPoint().GetY());
-	fillrectangle(m_rectSphere.GetEndPoint().GetX() - 4, m_rectSphere.GetEndPoint().GetY() - 4,
-		m_rectSphere.GetEndPoint().GetX(), m_rectSphere.GetEndPoint().GetY());
-	
-	switch (m_dir)
-	{
-	case UP:
-		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX(), m_pos.GetY() - 15);
-		break;
-	case DOWN:
-		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX(), m_pos.GetY() + 15);
-		break;
-	case LEFT:
-		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX() - 15, m_pos.GetY());
-		break;
-	case RIGHT:
-		line(m_pos.GetX(), m_pos.GetY(), m_pos.GetX() + 15, m_pos.GetY());
-		break;
-	default:
-		break;
-	}
-
-	setcolor(color_save);
-	setfillcolor(fill_color_save);
-}
-
-void EnemyTank::Move()
+void EnemyTank::Move(int start_x, int end_x, int start_y, int end_y)
 {
 	switch (m_dir)
 	{
 	case UP:
 		m_pos.SetY(m_pos.GetY() - m_step);
-		if (m_rectSphere.GetStartPoint().GetY() < Graphic::GetBattleGround().GetStartPoint().GetY())
+		if (m_rectSphere.GetStartPoint().GetY() <start_y)
 		{
 			m_pos.SetY(m_pos.GetY() + m_step);
 			this->RandomDir(1);
@@ -92,7 +93,7 @@ void EnemyTank::Move()
 		break;
 	case DOWN:
 		m_pos.SetY(m_pos.GetY() + m_step);
-		if (m_rectSphere.GetEndPoint().GetY() > Graphic::GetBattleGround().GetEndPoint().GetY())
+		if (m_rectSphere.GetEndPoint().GetY() > end_y)
 		{
 			m_pos.SetY(m_pos.GetY() - m_step);
 			this->RandomDir(1);
@@ -100,7 +101,7 @@ void EnemyTank::Move()
 		break;
 	case LEFT:
 		m_pos.SetX(m_pos.GetX() - m_step);
-		if (m_rectSphere.GetStartPoint().GetX() < Graphic::GetBattleGround().GetStartPoint().GetX())
+		if (m_rectSphere.GetStartPoint().GetX() <start_x)
 		{
 			m_pos.SetX(m_pos.GetX() + m_step);
 			this->RandomDir(1);
@@ -108,7 +109,7 @@ void EnemyTank::Move()
 		break;
 	case RIGHT:
 		m_pos.SetX(m_pos.GetX() + m_step);
-		if (m_rectSphere.GetEndPoint().GetX() > Graphic::GetBattleGround().GetEndPoint().GetX())
+		if (m_rectSphere.GetEndPoint().GetX() >end_x)
 		{
 			m_pos.SetX(m_pos.GetX() - m_step);
 			this->RandomDir(1);

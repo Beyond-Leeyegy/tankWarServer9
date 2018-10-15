@@ -10,6 +10,7 @@
 #define __MESSAGE_H__
 
 #include "structs.h"
+#include "game.h"
 
 #define dPACKET_ALIVE_CHECK		0	//用于连接状态的确认
 #define dPACKET_CHANGE_NICK		1	//绰号的修改
@@ -67,7 +68,7 @@ void HANDLE_NEW_BULLET(sPCLIENT_DATA pClient, Game& game);
 聊天消息（客户-》服务器）；
 聊天消息（服务器-》客户））
 */
-BOOL ReadRecvBuff(sPCLIENT_DATA pClient);
+BOOL ReadRecvBuff(sPCLIENT_DATA pClient,Game& game);
 
 
 #endif // !__MESSAGE_H__

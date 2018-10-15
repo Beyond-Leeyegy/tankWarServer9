@@ -34,71 +34,72 @@ Bullet::~Bullet()
 }
 
 
-// »æÍ¼
-void Bullet::Display()
-{
-	COLORREF fill_color_save = getfillcolor();
-	COLORREF color_save = getcolor();
-
-	setfillcolor(m_color);
-	setcolor(m_color);
-
-	fillcircle(m_pos.GetX(), m_pos.GetY(), 4);
-		
-	setcolor(color_save);
-	setfillcolor(fill_color_save);
-}
+//// »æÍ¼
+//void Bullet::Display()
+//{
+//	COLORREF fill_color_save = getfillcolor();
+//	COLORREF color_save = getcolor();
+//
+//	setfillcolor(m_color);
+//	setcolor(m_color);
+//
+//	fillcircle(m_pos.GetX(), m_pos.GetY(), 4);
+//		
+//	setcolor(color_save);
+//	setfillcolor(fill_color_save);
+//}
 
 // ÒÆ¶¯
-void Bullet::Move()
+
+void Bullet::Move(int start_x, int end_x, int start_y, int end_y)
 {
 	switch (m_dir)
 	{
 	case UP:
 		m_pos.SetY(m_pos.GetY() - m_step);
 		CalculateSphere();
-		if (m_rectSphere.GetStartPoint().GetY() < Graphic::GetBattleGround().GetStartPoint().GetY())
+		if (m_rectSphere.GetStartPoint().GetY() < start_y)
 		{
-			m_pos.SetY(Graphic::GetBattleGround().GetStartPoint().GetY());
+			m_pos.SetY(start_y);
 			m_bDisappear = true;
 		}
 		break;
 	case DOWN:
 		m_pos.SetY(m_pos.GetY() + m_step);
 		CalculateSphere();
-		if (m_rectSphere.GetEndPoint().GetY() > Graphic::GetBattleGround().GetEndPoint().GetY())
+		if (m_rectSphere.GetEndPoint().GetY() > end_y)
 		{
-			m_pos.SetY(Graphic::GetBattleGround().GetEndPoint().GetY());
+			m_pos.SetY(end_y);
 			m_bDisappear = true;
 		}
 		break;
 	case LEFT:
 		m_pos.SetX(m_pos.GetX() - m_step);
 		CalculateSphere();
-		if (m_rectSphere.GetStartPoint().GetX() < Graphic::GetBattleGround().GetStartPoint().GetX())
+		if (m_rectSphere.GetStartPoint().GetX() < start_x)
 		{
-			m_pos.SetX(Graphic::GetBattleGround().GetStartPoint().GetX());
+			m_pos.SetX(start_x);
 			m_bDisappear = true;
 		}
 		break;
 	case RIGHT:
 		m_pos.SetX(m_pos.GetX() + m_step);
 		CalculateSphere();
-		if (m_rectSphere.GetEndPoint().GetX() > Graphic::GetBattleGround().GetEndPoint().GetX())
+		if (m_rectSphere.GetEndPoint().GetX() >end_x)
 		{
-			m_pos.SetX(Graphic::GetBattleGround().GetEndPoint().GetX());
+			m_pos.SetX(end_x);
 			m_bDisappear = true;
 		}
 		break;
 	default:
 		break;
-	}	
+	}
 }
 
-void Bullet::Boom(list<Object*>& lstBombs)
-{
-	lstBombs.push_back(new Bomb(m_pos, SMALL));
-}
+//void Bullet::Boom(list<Object*>& lstBombs)
+//{
+//	lstBombs.push_back(new Bomb(m_pos, SMALL));
+//}
 
 void Bullet::CalculateSphere()
 {

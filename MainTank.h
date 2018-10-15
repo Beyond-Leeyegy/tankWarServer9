@@ -4,6 +4,7 @@
 //
 //#include <windows.h>
 #include "Tank.h"
+#include "Object.h"
 
 class MainTank : public Tank
 {
@@ -14,7 +15,7 @@ public:
 
 		this->CalculateSphere();
 
-		m_color = YELLOW;
+		//m_color = YELLOW;
 		m_dir = Dir::UP;
 		m_step = 8;
 	}
@@ -29,10 +30,10 @@ public:
 
 	
 
-	void Display();
+	//void Display();
 	void Move();
 	void Shoot(list<Object*>& lstBullets);
-	void Boom(list<Object*>& lstBombs);
+	//void Boom(list<Object*>& lstBombs);
 
 	BYTE GetLife();
 	void SetLife(BYTE newLife);

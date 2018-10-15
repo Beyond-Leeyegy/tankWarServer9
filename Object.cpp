@@ -1,10 +1,10 @@
 #include "Object.h"
 #include <stdio.h>
-void Object::set_id(byte new_id)
+void Object::set_id(BYTE new_id)
 {
 	id = new_id;
 }
-byte Object::get_id()
+BYTE Object::get_id()
 {
 	return id;
 }

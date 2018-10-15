@@ -19,11 +19,11 @@ public:
 	Bomb(Point pos, BombType type);
 	~Bomb(){}
 
-	void Display();
+	//void Display();
 
 	void Move();
 
-	void Boom(list<Object*>& lstBombs);
+	//void Boom(list<Object*>& lstBombs);
 	
 	bool IsDisappear();
 	void SetDisappear(){}

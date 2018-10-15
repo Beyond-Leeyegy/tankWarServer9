@@ -7,6 +7,16 @@
 class Game
 {
 public:
+	/*
+		定义游戏边界
+	*/
+	int width;
+	int height;
+	int start_x;
+	int start_y;
+	int end_x;
+	int end_y;
+
 	Game(sPCLIENT_DATA Client1, sPCLIENT_DATA Client2);
 	~Game();
 

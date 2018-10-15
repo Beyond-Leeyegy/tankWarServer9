@@ -12,15 +12,15 @@ public:
 	Bullet();
 	Bullet(Point pos, Dir dir, COLORREF color);
 	~Bullet();
-	void Bullet::SetDir(Dir dir);
-	void Display();
+	void SetDir(Dir dir);
+	//void Display();
 
-	void Move();
+	void Move(int start_x, int end_x, int start_y, int end_y);
 
 	Dir getDir();
 
-	void Boom(list<Object*>& lstBombs);
-
+	/*void Boom(list<Object*>& lstBombs);
+*/
 	bool IsDisappear()
 	{
 		return m_bDisappear;

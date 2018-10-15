@@ -76,7 +76,7 @@ SOCKET InitServerSock(int port, int backlog) {
 #ifndef WIN32
 	//针对linux平台
 	int opt = 1;
-	if (setsockopt(sock, SOL_SPCKET, SO_REUSEADDR, (char*)&opt, sizeof(opt)) < 0)
+	if (setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (char*)&opt, sizeof(opt)) < 0)
 	{
 		log("* Error: setsockopt REUSEADDR \r\n");
 		exit(1);
@@ -89,7 +89,7 @@ SOCKET InitServerSock(int port, int backlog) {
 	struct linger ld;
 	ld.l_onoff = 0;
 	ld.l_linger = 0;
-	if (setsockopt(sock, SOL_SOCKET, SO_LINGER, char(*)&ld, sizeof(ld)) < 0) {
+	if (setsockopt(sock, SOL_SOCKET, SO_LINGER, (char*)&ld, sizeof(ld)) < 0) {
 		log("* Error: setsockopt SO_LINGER...\r\n");
 	}
 
@@ -144,7 +144,7 @@ void AcceptNewClient(SOCKET MotherSocket) {
 
 	peersize = sizeof(peer);
 
-	newDesc = accpet(MotherSocket,(struct sockaddr*)&newDesc,&peersize);
+	newDesc = accept(MotherSocket,(struct sockaddr*)&newDesc,&peersize);
 
 	/*
 		Error: accpet返回值异常
@@ -176,7 +176,7 @@ void AcceptNewClient(SOCKET MotherSocket) {
 	*/
 	newClient->m_scok = newDesc;
 
-	strcpy(newClient->m_IP, (char *)inet_nota(peer.sin_addr));
+	strcpy(newClient->m_IP, (char *)inet_ntoa(peer.sin_addr));
 
 	//recv data 
 	*newClient->m_recvBuff = '\0'; //可见->的运算优先与*
