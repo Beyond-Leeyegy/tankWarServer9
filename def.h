@@ -71,6 +71,7 @@ typedef int BOOL;
 typedef unsigned char BYTE;
 typedef unsigned long DWORD;
 typedef unsigned short WORD;
+typedef int COLORREF;
 
 
 

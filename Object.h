@@ -3,10 +3,10 @@
 //#include <WinSock2.h>
 //
 //#include <windows.h>
-#include <list>
-
-#include "Graphic.h"
-
+//#include <list>
+#include "Rect.h"
+#include "Point.h"
+#include "def.h"
 
 
 using namespace std;
@@ -35,8 +35,8 @@ public:
 
 	Dir GetDir();
 
-	byte get_id();
-	void set_id(byte id);
+	BYTE get_id();
+	void set_id(BYTE id);
 
 	Point get_pos();
 
@@ -59,7 +59,7 @@ protected:
 	
 
 	//add for online 
-	byte id;
+	BYTE id;
 
 	// 位置
 	Point m_pos;
@@ -70,7 +70,7 @@ protected:
 	
 
 	// 颜色
-	COLORREF m_color;
+	COLORREF m_color;//colorref实际上是一个32为整数，但是仅仅在win下支持，因此在linux端专程COLORREF//DEF.H中进行定义
 	// 方向
 	Dir m_dir;
 	// 存在状态

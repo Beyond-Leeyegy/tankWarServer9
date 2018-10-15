@@ -20,6 +20,7 @@
 #ifndef  __PACKET_H__
 #define  __PACKET_H__
 
+#include "def.h"
 /*
 	在pPacket参数的nPos放置BYTE类型的value的值
 */

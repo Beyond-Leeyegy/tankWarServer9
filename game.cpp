@@ -7,6 +7,7 @@
 #include "Setting.h"
 #include "EnemyTank.h"
 #include "network.h"
+#include "def.h"
 /*
 发送all_pos数据包
 
