@@ -1,9 +1,9 @@
 #ifndef __BULLET_H__
 #define __BULLET_H__
 
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 #include "Object.h"
 
 class Bullet : public Object

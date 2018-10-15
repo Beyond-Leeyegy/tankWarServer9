@@ -1,9 +1,9 @@
 ﻿#ifndef __TANK_H__
 #define __TANK_H__
 
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 
 #include "Object.h"
 #include "Bomb.h"

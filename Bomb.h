@@ -1,9 +1,9 @@
 #ifndef __BOMB_H__
 #define __BOMB_H__
 
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 #include "Object.h"
 
 enum BombType

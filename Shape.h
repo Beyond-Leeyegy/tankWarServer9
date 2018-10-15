@@ -2,9 +2,9 @@
 #define __SHAPE_H__
 
 
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 #include "Rect.h"
 
 

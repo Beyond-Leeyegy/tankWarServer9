@@ -1,8 +1,8 @@
 ﻿#ifndef __MAIN_TANK__
 #define __MAIN_TANK__
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 #include "Tank.h"
 
 class MainTank : public Tank

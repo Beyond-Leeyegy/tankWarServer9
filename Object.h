@@ -1,8 +1,8 @@
 ﻿#ifndef __OBJECT_H__
 #define __OBJECT_H__
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 #include <list>
 
 #include "Graphic.h"

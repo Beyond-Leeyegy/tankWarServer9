@@ -1,8 +1,8 @@
 ﻿#ifndef __ENEMY_TANK__
 #define __ENEMY_TANK__
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 #include "Tank.h"
 
 #define MAX_STEP_TURN	20

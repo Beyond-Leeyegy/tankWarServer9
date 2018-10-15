@@ -1,8 +1,8 @@
 ﻿#ifndef __RECTANGLE_H__
 #define __RECTANGLE_H__
-#include <WinSock2.h>
-
-#include <windows.h>
+//#include <WinSock2.h>
+//
+//#include <windows.h>
 #include "Point.h"
 
 
