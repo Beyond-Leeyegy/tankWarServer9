@@ -4,7 +4,7 @@
 #include "Bullet.h"
 #include "Object.h"
 
-void EnemyTank::RandomTank(int width,int height)
+void EnemyTank::RandomTank( int width,int height)
 {
 	m_pos.SetX(rand() % (width - 30) + 15);
 	m_pos.SetY(rand() % (height - 30) + 15);

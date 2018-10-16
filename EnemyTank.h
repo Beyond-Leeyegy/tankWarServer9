@@ -11,9 +11,12 @@
 class EnemyTank : public Tank
 {
 public:
-	EnemyTank()
+	/*
+		enemytank的构造函数实际上委托给randomTank进行随机初始化坦克
+	*/
+	EnemyTank(int width, int height)
 	{
-		RandomTank();
+		RandomTank(width, height);
 	}
 
 	~EnemyTank(){}

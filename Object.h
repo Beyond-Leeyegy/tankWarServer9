@@ -9,7 +9,7 @@
 #include "def.h"
 
 
-using namespace std;
+//using namespace std;
 
 enum Dir { UP, DOWN, LEFT, RIGHT };
 

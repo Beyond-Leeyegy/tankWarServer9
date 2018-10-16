@@ -372,7 +372,7 @@ void Game::Game_Logic() {
 
 		for (int i = 0; i < Setting::GetTankNum(); i++)
 		{
-			EnemyTank* p = new EnemyTank();
+			EnemyTank* p = new EnemyTank(width, height);
 			lstTanks.push_back(p);
 		}
 
@@ -767,5 +767,5 @@ void Game::Dispose()
 	}
 	lstBombs.clear();
 
-	Graphic::Destroy();
+	//Graphic::Destroy();
 }
