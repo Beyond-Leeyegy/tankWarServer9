@@ -416,11 +416,11 @@ void Game::Game_Logic() {
 		没有消失 && 网络连接正常
 	*/
 	if (pClient1 != NULL && !pClient1->mainTank.IsDisappear()) {
-		pClient1->mainTank.Move();
+		pClient1->mainTank.Move(start_x,end_x,start_y,end_y);
 	}
 
 	if (pClient2 != NULL && !pClient2->mainTank.IsDisappear()) {
-		pClient2->mainTank.Move();
+		pClient2->mainTank.Move(start_x, end_x, start_y, end_y);
 	}
 
 
@@ -429,7 +429,7 @@ void Game::Game_Logic() {
 	/* Move Tanks and Send BOOM_ACT */
 	for (list<Tank*>::iterator it = lstTanks.begin(); it != lstTanks.end();)
 	{
-		(*it)->Move();
+		(*it)->Move(start_x, end_x, start_y, end_y);
 
 		if ((*it)->IsDisappear())
 		{
@@ -462,7 +462,7 @@ void Game::Game_Logic() {
 	/* Draw Bullets */
 	for (list<Object*>::iterator it = lstMainTankBullets.begin(); it != lstMainTankBullets.end();)
 	{
-		(*it)->Move();
+		(*it)->Move(start_x, end_x, start_y, end_y);
 
 		if ((*it)->IsDisappear())
 		{
@@ -481,7 +481,7 @@ void Game::Game_Logic() {
 
 	for (list<Object*>::iterator it = lstBullets.begin(); it != lstBullets.end();)
 	{
-		(*it)->Move();
+		(*it)->Move(start_x, end_x, start_y, end_y);
 
 		if ((*it)->IsDisappear())
 		{
@@ -666,7 +666,7 @@ void Game::runGame() {
 			客户端：显示游戏结束的画面，断开与服务器之间的连接，再次准备之后
 		*/
 
-		if (pClient1 != NULL && pClient2!=NULL && pClient1->mainTank.IsDisappear && pClient2->mainTank.IsDisappear) {
+		if (pClient1 != NULL && pClient2!=NULL && pClient1->mainTank.IsDisappear() && pClient2->mainTank.IsDisappear()) {
 			pClient1->is_Ready = 0;
 			pClient1->in_Game = 0;
 			pClient1->is_Ready = 0;

@@ -18,7 +18,7 @@ class Shape
 {
 public:
 	static bool CheckPointInRect(Point point, Rect& rect);
-	static bool CheckIntersect(Rect& rectA, Rect& rectB);
+	static bool CheckIntersect(Rect rectA, Rect rectB);
 };
 
 #endif

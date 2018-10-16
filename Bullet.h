@@ -28,6 +28,10 @@ public:
 
 	Rect GetSphere()
 	{
+		/*
+			new added here
+		*/
+		CalculateSphere();
 		return m_rectSphere;
 	}
 

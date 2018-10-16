@@ -68,28 +68,28 @@ void MainTank::SetDir(Dir dir)
 //	setfillcolor(fill_color_save);
 //}
 
-void MainTank::Move()
+void MainTank::Move(int start_x, int end_x, int start_y, int end_y)
 {
 	switch (m_dir)
 	{
 	case UP:
 		m_pos.SetY(m_pos.GetY() - m_step);
-		if (m_rectSphere.GetStartPoint().GetY() < Graphic::GetBattleGround().GetStartPoint().GetY())
+		if (m_rectSphere.GetStartPoint().GetY() < start_y)
 			m_pos.SetY(m_pos.GetY() + m_step);
 		break;
 	case DOWN:
 		m_pos.SetY(m_pos.GetY() + m_step);
-		if (m_rectSphere.GetEndPoint().GetY() > Graphic::GetBattleGround().GetEndPoint().GetY())
+		if (m_rectSphere.GetEndPoint().GetY() > end_y)
 			m_pos.SetY(m_pos.GetY() - m_step);
 		break;
 	case LEFT:
 		m_pos.SetX(m_pos.GetX() - m_step);
-		if (m_rectSphere.GetStartPoint().GetX() < Graphic::GetBattleGround().GetStartPoint().GetX())
+		if (m_rectSphere.GetStartPoint().GetX() < start_x)
 			m_pos.SetX(m_pos.GetX() + m_step);
 		break;
 	case RIGHT:
 		m_pos.SetX(m_pos.GetX() + m_step);
-		if (m_rectSphere.GetEndPoint().GetX() > Graphic::GetBattleGround().GetEndPoint().GetX())
+		if (m_rectSphere.GetEndPoint().GetX() > end_x)
 			m_pos.SetX(m_pos.GetX() - m_step);
 		break;
 	default:

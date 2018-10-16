@@ -14,7 +14,7 @@ bool Shape::CheckPointInRect(Point point, Rect& rect)
 	}
 }
 
-bool Shape::CheckIntersect(Rect& rectA, Rect& rectB)
+bool Shape::CheckIntersect(Rect rectA, Rect rectB)
 {
 	if (CheckPointInRect(rectA.GetStartPoint(), rectB) ||
 		CheckPointInRect(rectA.GetEndPoint(), rectB) ||

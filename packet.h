@@ -24,7 +24,7 @@
 /*
 	在pPacket参数的nPos放置BYTE类型的value的值
 */
-void PutByte(char *pPacket, BYTE value, int & nPos);
+void  PutByte(char *pPacket, BYTE value, int & nPos);
 
 /*
 	吧pPacket参数nPos位置的值以BYTE类型返回

@@ -16,7 +16,7 @@ public:
 		this->CalculateSphere();
 
 		//m_color = YELLOW;
-		m_dir = Dir::UP;
+		m_dir = Dir::UP;	
 		m_step = 8;
 	}
 
@@ -31,7 +31,7 @@ public:
 	
 
 	//void Display();
-	void Move();
+	void Move(int start_x, int end_x, int start_y, int end_y);
 	void Shoot(list<Object*>& lstBullets);
 	//void Boom(list<Object*>& lstBombs);
 
@@ -41,8 +41,8 @@ public:
 protected:
 	void CalculateSphere();
 
-	// 绘制坦克主体
-	void DrawTankBody();
+	//// 绘制坦克主体
+	//void DrawTankBody();
 
 	//new added 
 	BYTE life = 3;
