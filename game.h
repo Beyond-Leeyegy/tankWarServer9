@@ -39,7 +39,7 @@ public:
 	/*
 		发送all_pos数据包
 		
-		ALL_POS数据包结构：size word->tag word->主战坦克1数据{id:byte,x:int,y:int.dir:int,坦克生命值:byte}->友军主战坦克数据{数据同上}->子弹类数据{子弹个数:byte,loop{id:byte,x:int,y:int,dir:int,type:byte0代表我军集合，1代表敌军集合}}->
+		ALL_POS数据包结构：size: word->tag :word->主战坦克1数据{id:byte,x:int,y:int.dir:int,坦克生命值:byte}->友军主战坦克数据{数据同上}->子弹类数据{子弹个数:byte,loop{id:byte,x:int,y:int,dir:int,type:byte0代表我军集合，1代表敌军集合}}->
 		电脑坦克数据{坦克数,loop{同上}}
 		
 	*/

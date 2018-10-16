@@ -33,10 +33,10 @@ void Game::onSend_ALL_POS() {
 	PutByte(content_to_1, pClient1->mainTank.get_id(), pos_1);
 
 	//x:int
-	PutInteger(content_to_1, pClient1->mainTank.get_pos().GetX, pos_1);
+	PutInteger(content_to_1, pClient1->mainTank.get_pos().GetX(), pos_1);
 
 	//y:int
-	PutInteger(content_to_1, pClient1->mainTank.get_pos().GetY, pos_1);
+	PutInteger(content_to_1, pClient1->mainTank.get_pos().GetY(), pos_1);
 
 	//dir:int
 	PutInteger(content_to_1, pClient1->mainTank.GetDir(), pos_1);
@@ -51,10 +51,10 @@ void Game::onSend_ALL_POS() {
 	PutByte(content_to_1, pClient2->mainTank.get_id(), pos_1);
 
 	//x:int
-	PutInteger(content_to_1, pClient2->mainTank.get_pos().GetX, pos_1);
+	PutInteger(content_to_1, pClient2->mainTank.get_pos().GetX(), pos_1);
 
 	//y:int
-	PutInteger(content_to_1, pClient2->mainTank.get_pos().GetY, pos_1);
+	PutInteger(content_to_1, pClient2->mainTank.get_pos().GetY(), pos_1);
 
 	//dir:int
 	PutInteger(content_to_1, pClient2->mainTank.GetDir(), pos_1);
@@ -75,10 +75,10 @@ void Game::onSend_ALL_POS() {
 	PutByte(content_to_2, pClient2->mainTank.get_id(), pos_2);
 
 	//x:int
-	PutInteger(content_to_2, pClient2->mainTank.get_pos().GetX, pos_2);
+	PutInteger(content_to_2, pClient2->mainTank.get_pos().GetX(), pos_2);
 
 	//y:int
-	PutInteger(content_to_2, pClient2->mainTank.get_pos().GetY, pos_2);
+	PutInteger(content_to_2, pClient2->mainTank.get_pos().GetY(), pos_2);
 
 	//dir:int
 	PutInteger(content_to_2, pClient2->mainTank.GetDir(), pos_2);
@@ -93,10 +93,10 @@ void Game::onSend_ALL_POS() {
 	PutByte(content_to_2, pClient1->mainTank.get_id(), pos_2);
 
 	//x:int
-	PutInteger(content_to_2, pClient1->mainTank.get_pos().GetX, pos_2);
+	PutInteger(content_to_2, pClient1->mainTank.get_pos().GetX(), pos_2);
 
 	//y:int
-	PutInteger(content_to_2, pClient1->mainTank.get_pos().GetY, pos_2);
+	PutInteger(content_to_2, pClient1->mainTank.get_pos().GetY(), pos_2);
 
 	//dir:int
 	PutInteger(content_to_2, pClient1->mainTank.GetDir(), pos_2);
@@ -145,8 +145,8 @@ void Game::onSend_ALL_POS() {
 	for (list<Object*>::iterator it = lstMainTankBullets.begin(); it != lstMainTankBullets.end(); it++)
 	{
 		//id:BYTE
-		PutByte(content_to_1, (*it)->get_id, pos_1);
-		PutByte(content_to_2, (*it)->get_id, pos_2);
+		PutByte(content_to_1, (*it)->get_id(), pos_1);
+		PutByte(content_to_2, (*it)->get_id(), pos_2);
 
 
 		//x:INT
@@ -177,8 +177,8 @@ void Game::onSend_ALL_POS() {
 	for (list<Tank*>::iterator it = lstTanks.begin(); it != lstTanks.end(); it++)
 	{
 		//id:BYTE
-		PutByte(content_to_1, (*it)->get_id, pos_1);
-		PutByte(content_to_2, (*it)->get_id, pos_2);
+		PutByte(content_to_1, (*it)->get_id(), pos_1);
+		PutByte(content_to_2, (*it)->get_id(), pos_2);
 
 
 		//x:INT
@@ -198,6 +198,7 @@ void Game::onSend_ALL_POS() {
 	//putsize
 	PutSize(content_to_1, (WORD)pos_1);
 	PutSize(content_to_2, (WORD)pos_2);
+
 
 	if (pClient1 != NULL&& pClient1->m_sendSize + pos_1 > dMAX_SOCK_BUFF) {
 		log("overflow in client [%d] 's m_sendBuff may resulting in data omitting! \r\n", pClient1->m_scok);

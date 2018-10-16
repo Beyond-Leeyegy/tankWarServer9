@@ -11,7 +11,7 @@
 /*
 在pPacket参数的nPos放置BYTE类型的value的值
 */
-void PutByte(char *pPacket, BYTE value, int & nPos) {
+void static PutByte(char *pPacket, BYTE value, int & nPos) {
 	
 	*(BYTE *)(pPacket + nPos) = value;
 	nPos += sizeof(BYTE);
@@ -21,7 +21,7 @@ void PutByte(char *pPacket, BYTE value, int & nPos) {
 吧pPacket参数nPos位置的值以BYTE类型返回
 */
 
-BYTE GetByte(char* pPacket, int& nPos) {
+BYTE static GetByte(char* pPacket, int& nPos) {
 	BYTE value = *(BYTE *)(pPacket + nPos);
 	nPos += sizeof(BYTE);
 	return value;
@@ -67,7 +67,7 @@ DWORD GetDword(char* pPacket, int &nPos) {
 /*
 在pPacket参数的nPos放置int类型的value的值
 */
-void PutInteger(char *pPacket, int value, int & nPos) {
+void static PutInteger(char *pPacket, int value, int & nPos) {
 	*(int *)(pPacket + nPos) = value;
 	nPos += sizeof(int);
 }
@@ -76,7 +76,7 @@ void PutInteger(char *pPacket, int value, int & nPos) {
 吧pPacket参数nPos位置的值以int类型返回
 */
 
-int GetInteger(char* pPacket, int &nPos) {
+int  static GetInteger(char* pPacket, int &nPos) {
 	int value = *(int*)(pPacket + nPos);
 	nPos += sizeof(int );
 	return value;

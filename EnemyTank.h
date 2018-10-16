@@ -8,6 +8,11 @@
 #define MAX_STEP_TURN	20
 #define MAX_STEP_SHOOT	15
 
+/*
+	new added 
+*/
+enum Dir { UP, DOWN, LEFT, RIGHT };
+
 class EnemyTank : public Tank
 {
 public:

@@ -10,6 +10,10 @@
 
 
 #include <list>
+/*
+new added
+*/
+enum Dir { UP, DOWN, LEFT, RIGHT };
 
 using namespace std;
 

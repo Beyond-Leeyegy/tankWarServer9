@@ -6,6 +6,11 @@
 #include "Tank.h"
 #include "Object.h"
 
+/*
+new added
+*/
+enum Dir { UP, DOWN, LEFT, RIGHT };
+
 class MainTank : public Tank
 {
 public:
