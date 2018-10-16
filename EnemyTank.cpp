@@ -9,7 +9,7 @@ void EnemyTank::RandomTank( int width,int height)
 	m_pos.SetX(rand() % (width - 30) + 15);
 	m_pos.SetY(rand() % (height - 30) + 15);
 	//m_color = WHITE;
-	m_dir = (Dir)(Dir::UP + (rand() % 4));
+	m_dir = (Dir)(UP + (rand() % 4));
 	m_step = 1;
 	m_stepCnt = rand();
 }
@@ -24,7 +24,7 @@ void EnemyTank::RandomDir(int type)
 	if (type == 1)
 	{
 		Dir dir;
-		while ((dir = (Dir)(Dir::UP + (rand() % 4))) == m_dir)
+		while ((dir = (Dir)(UP + (rand() % 4))) == m_dir)
 		{
 			// Do nothing
 		}
@@ -33,7 +33,7 @@ void EnemyTank::RandomDir(int type)
 	}
 	else
 	{
-		m_dir = (Dir)(Dir::UP + (rand() % 4));
+		m_dir = (Dir)(UP + (rand() % 4));
 	}
 }
 //

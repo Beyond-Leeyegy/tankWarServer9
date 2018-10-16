@@ -10,10 +10,7 @@
 
 
 #include <list>
-/*
-new added
-*/
-enum Dir { UP, DOWN, LEFT, RIGHT };
+
 
 using namespace std;
 
@@ -27,7 +24,7 @@ public:
 		this->CalculateSphere();
 
 		//m_color = YELLOW;
-		m_dir = Dir::UP;
+		m_dir = UP;
 		m_step = 2;
 
 		m_bDisappear = false;

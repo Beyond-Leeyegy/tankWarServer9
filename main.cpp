@@ -292,8 +292,14 @@ void ProcessLoop() {
 				如果客户-》服务器缓存器存在数据，那么就处理这些数据
 			*/
 
+			/*
+			
+				@readrecvBuff:message.h 
+				here just handle is_ready
+			*/
+			Game tmp();
 			if (client->m_recvSize) { 
-				if (!ReadRecvBuff(client))
+				if (!ReadRecvBuff(client,NULL))
 				{
 					DisconnectClient(client);
 					LIST_SKIP(client, next_client);

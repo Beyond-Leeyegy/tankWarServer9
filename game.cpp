@@ -120,8 +120,8 @@ void Game::onSend_ALL_POS() {
 	for (list<Object*>::iterator it = lstBullets.begin(); it != lstBullets.end(); it++)
 	{
 		//id:BYTE
-		PutByte(content_to_1, (*it)->get_id,pos_1);
-		PutByte(content_to_2, (*it)->get_id, pos_2);
+		PutByte(content_to_1, (*it)->get_id(),pos_1);
+		PutByte(content_to_2, (*it)->get_id(), pos_2);
 
 
 		//x:INT
@@ -596,7 +596,7 @@ void Game::Handling_Info() {
 	*/
 	//client1
 	if (pClient1 != NULL && pClient1->m_recvSize) {
-		if (!ReadRecvBuff(pClient1))
+		if (!ReadRecvBuff(pClient1,*this))
 		{
 			DisconnectClient(pClient1);
 			//LIST_SKIP(client, next_client);
@@ -605,7 +605,7 @@ void Game::Handling_Info() {
 
 	//client2
 	if (pClient2 != NULL && pClient2->m_recvSize) {
-		if (!ReadRecvBuff(pClient2))
+		if (!ReadRecvBuff(pClient2 ,*this))
 		{
 			DisconnectClient(pClient2);
 			//LIST_SKIP(client, next_client);

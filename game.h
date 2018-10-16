@@ -17,6 +17,7 @@ public:
 	int end_x;
 	int end_y;
 
+	Game();
 	Game(sPCLIENT_DATA Client1, sPCLIENT_DATA Client2);
 	~Game();
 
